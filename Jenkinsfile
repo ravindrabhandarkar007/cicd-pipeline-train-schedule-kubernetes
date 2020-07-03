@@ -44,6 +44,7 @@ pipeline {
                 branch 'example-solution'
             }
             steps {
+                sh 'sudo -S sshpass -p 'Doomsday@123' -v ssh -o StrictHostKeyChecking=no kubemaster@40.121.39.96'
                 kubernetesDeploy(
                    kubeconfigId: 'kubeconfig',
                    configs: 'train-schedule-kube.yml',
